@@ -8,4 +8,4 @@ This is an Android based game that presents the user with simple math problems. 
 - Multiplication
 - Divison 
 
-![image](https://github.com/JustinScott/MathNinja/blob/master/res/screenshot.png?raw=true)
+![image](https://github.com/JustinScott/MathNinja/blob/master/assets/screenshot.png?raw=true)
