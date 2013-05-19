@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
         TextView textview2 = (TextView) findViewById(R.id.textView2);
         TextView textview3 = (TextView) findViewById(R.id.textView3);
         TextView textview4 = (TextView) findViewById(R.id.textView4);
+
         Typeface font = Typeface.createFromAsset(getAssets(), "DK Crayon Crumble.ttf");
         
         textview1.setTypeface(font);
@@ -152,47 +153,51 @@ public class MainActivity extends Activity {
 	public void clickButton(View view) {
     	int buttonId = view.getId();
     	Button button = (Button) findViewById(buttonId);
+
     	String button_text = button.getText().toString();
     	int button_value = Integer.parseInt(button_text);
     	
     	view.animate().rotationYBy(360f);
     	
-    	int answer;
+    	int answer = INCORRECT;
     	if(solution == button_value)
     		answer = CORRECT;
-    	else
-    		answer = INCORRECT;
-    	
-    	processAnswer(answer);
+
+    	playAnswerSound(answer);
+        updateCounter(answer);
+        updateDisplay();
 		showAnswerToast(answer);
     }
-    
-    public void processAnswer(int answer) {
+
+    public void updateCounter(int answer) {
+        if(answer == CORRECT)
+            correct_count++;
+        else
+            incorrect_count++;
+    }
+
+    public void playAnswerSound(int answer) {
     	MediaPlayer mediaPlayer;
     	
     	if(answer == CORRECT) { //correct
     		mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.fast_woosh);
-    		correct_count++;
     	} else {
     		mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.boing);
-    		incorrect_count++;
     	}
     	
     	mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
 
             @Override
             public void onCompletion(MediaPlayer mp) {
-                // TODO Auto-generated method stub
                 mp.release();
             }
 
         });
 		mediaPlayer.start();
-		updateDisplay();
     }    
 	
 	public void createProblem(int op, int level) {
-		int max = 0, min = 0;
+		int max , min;
 		
 		//use the value of level to determine max / min
 		if((op == ADDITION) || (op == SUBTRACTION)) {
@@ -258,7 +263,7 @@ public class MainActivity extends Activity {
 			solution = operand1 * operand2;
 		}
 		if(op == DIVISION) {
-			opChar = '÷';
+			opChar = '/';
 			solution = operand1 / operand2;
 		}
 	}
@@ -371,11 +376,13 @@ public class MainActivity extends Activity {
 		}
 		
 		//toast.cancel();
-		toast = Toast.makeText(getApplicationContext(), resId, Toast.LENGTH_SHORT);
-		toast.setGravity(Gravity.BOTTOM, 0, 0);
-//		toast.setDuration(Toast.LENGTH_SHORT);
-//		toast.setView(layout);
-		toast.show();
+        if(getApplicationContext() != null) {
+            toast = Toast.makeText(getApplicationContext(), resId, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 0);
+    //		toast.setDuration(Toast.LENGTH_SHORT);
+    //		toast.setView(layout);
+            toast.show();
+        }
 	}
 }
 
