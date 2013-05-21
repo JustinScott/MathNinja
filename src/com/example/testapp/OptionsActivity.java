@@ -47,41 +47,12 @@ public class OptionsActivity extends Activity {
             });
             mediaPlayer.start();
 
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
-            Button button3 = (Button) findViewById(R.id.button3);
-            Button button4 = (Button) findViewById(R.id.button4);
-
-            TranslateAnimation lrAnimation = new TranslateAnimation(-500f, 0f, 0f, 0f);
-            TranslateAnimation rlAnimation = new TranslateAnimation(500f, 0f, 0f, 0f);
-            AlphaAnimation aAnimation = new AlphaAnimation(0.0f, 1.0f);
-
-            AnimationSet animationSet1 = new AnimationSet(true);
-            animationSet1.setDuration(3000);
-            animationSet1.addAnimation(aAnimation);
-            animationSet1.addAnimation(lrAnimation);
-
-            AnimationSet animationSet2 = new AnimationSet(false);
-            animationSet2.setDuration(3000);
-            animationSet2.addAnimation(aAnimation);
-            animationSet2.addAnimation(rlAnimation);
-
-            button1.setAnimation(animationSet1);
-            button1.setVisibility(View.VISIBLE);
-
-            button2.setAnimation(animationSet2);
-            button2.setVisibility(View.VISIBLE);
-
-            button3.setAnimation(animationSet1);
-            button3.setVisibility(View.VISIBLE);
-
-            button4.setAnimation(animationSet2);
-            button4.setVisibility(View.VISIBLE);
+            introAnimation();
 
             FIRSTRUN = false;
         }
     }
-    
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -98,10 +69,81 @@ public class OptionsActivity extends Activity {
     	int buttonId = view.getId();
     	Button button = (Button) findViewById(buttonId);
     	String operation = button.getText().toString();
-    	
+
+        //outroAnimation(view);
+
     	Intent intent = new Intent(this, MainActivity.class);
     	intent.putExtra(OPERATION, operation);
     	intent.putExtra(LEVEL, 2);
     	startActivity(intent);
-    }    
+        //overridePendingTransition(0, R.animator.animator_arl);
+    }
+
+    private void introAnimation() {
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+
+        TranslateAnimation lrAnimation = new TranslateAnimation(-500f, 0f, 0f, 0f);
+        TranslateAnimation rlAnimation = new TranslateAnimation(500f, 0f, 0f, 0f);
+        AlphaAnimation aAnimation = new AlphaAnimation(0.0f, 1.0f);
+
+        AnimationSet animationSet1 = new AnimationSet(true);
+        animationSet1.setDuration(3000);
+        animationSet1.addAnimation(aAnimation);
+        animationSet1.addAnimation(lrAnimation);
+
+        AnimationSet animationSet2 = new AnimationSet(false);
+        animationSet2.setDuration(3000);
+        animationSet2.addAnimation(aAnimation);
+        animationSet2.addAnimation(rlAnimation);
+
+        button1.setAnimation(animationSet1);
+        button1.setVisibility(View.VISIBLE);
+
+        button2.setAnimation(animationSet2);
+        button2.setVisibility(View.VISIBLE);
+
+        button3.setAnimation(animationSet1);
+        button3.setVisibility(View.VISIBLE);
+
+        button4.setAnimation(animationSet2);
+        button4.setVisibility(View.VISIBLE);
+    }
+
+    private void outroAnimation(View view) {
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+
+        TranslateAnimation lrAnimation = new TranslateAnimation(0f, 500f, 0f, 0f);
+        TranslateAnimation rlAnimation = new TranslateAnimation(0f, -500f, 0f, 0f);
+        AlphaAnimation aAnimation = new AlphaAnimation(1.0f, 0.0f);
+
+        AnimationSet animationSet1 = new AnimationSet(true);
+        animationSet1.setDuration(2000);
+        animationSet1.addAnimation(aAnimation);
+        animationSet1.addAnimation(lrAnimation);
+
+        AnimationSet animationSet2 = new AnimationSet(false);
+        animationSet2.setDuration(2000);
+        animationSet2.addAnimation(aAnimation);
+        animationSet2.addAnimation(rlAnimation);
+
+        //button1.setAnimation(animationSet2);
+        button1.startAnimation(animationSet2);
+
+        button2.setAnimation(animationSet2);
+        //button2.setVisibility(View.VISIBLE);
+
+        button3.setAnimation(animationSet2);
+        //button3.setVisibility(View.);
+
+        button4.setAnimation(animationSet2);
+        //button4.setVisibility(View.VISIBLE);
+
+        view.setAnimation(animationSet1);
+    }
 }
