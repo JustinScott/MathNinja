@@ -5,7 +5,7 @@ This is an Android based game that presents the user with simple math problems. 
 
 - Addition
 - Subtraction
-- Multiplication
+- Multiplication  
 - Divison 
 
 ![image](https://github.com/JustinScott/MathNinja/blob/master/assets/screenshot.png?raw=true)
