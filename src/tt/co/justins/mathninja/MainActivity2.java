@@ -47,6 +47,9 @@ public class MainActivity2 extends Activity implements ProblemFragment.CommChann
         //2 is the default value if a level isnt saved in prefs
         //level = getSavedDifficultyLevel(2);
         level = 2;
+
+        getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
