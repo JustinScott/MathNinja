@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ff0000" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ninja"
+        android:contentDescription="@string/img_desc" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="match_parent"
+	    android:animateLayoutChanges="true"	
+	    android:layout_marginTop="50dp"
+	    android:id="@+id/container">	
+	    
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ninjastar1"
+			android:drawableStart="@drawable/ninjastar1"
+            android:onClick="clickButton"
+            android:text="@string/addition"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+			android:alpha="0.6"/>
+    
+	    <Button
+	        android:id="@+id/button2"
+	        android:layout_width="match_parent"
+	        android:layout_height="75dp"
+	       	android:layout_marginTop="20dp"
+	        android:onClick="clickButton"
+	        android:text="@string/subtraction"
+	        android:drawableLeft="@drawable/ninjastar1"
+			android:drawableStart="@drawable/ninjastar1"
+	        android:textSize="40sp"
+	        android:textStyle = "bold"
+	        android:visibility="gone"
+			android:alpha="0.6"/>
+	
+	    <Button
+	        android:id="@+id/button3"
+	        android:layout_width="match_parent"
+	        android:layout_height="75dp"
+			android:layout_marginTop="20dp"
+	        android:onClick="clickButton"
+	        android:text="@string/multiplication"
+	        android:drawableLeft="@drawable/ninjastar1"
+			android:drawableStart="@drawable/ninjastar1"
+	        android:textSize="40sp"
+	        android:textStyle = "bold"
+	        android:visibility="gone"
+			android:alpha="0.6"/>
+	    
+	    <Button
+	        android:id="@+id/button4"
+	        android:layout_width="match_parent"
+	        android:layout_height="75dp"
+	        android:layout_marginTop="20dp"
+	        android:onClick="clickButton"
+	        android:text="@string/division"
+	        android:drawableLeft="@drawable/ninjastar1"
+			android:drawableStart="@drawable/ninjastar1"
+	        android:textSize="40sp"
+	        android:textStyle = "bold"
+	        android:visibility="gone"
+			android:alpha="0.6"/>
+	    
+	</LinearLayout>
+	
+</RelativeLayout>

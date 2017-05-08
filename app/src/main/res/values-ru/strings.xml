@@ -1,0 +1,19 @@
+<resources>
+  <string name="app_name">Math ниндзя</string>
+  <string name="hello_world">Всем привет!</string>
+  <string name="menu_settings">Параметры</string>
+  <string name="title_activity_main">MainActivity</string>
+  <string name="title_activity_options">OptionsActivity</string>
+  <string name="img_desc">Фоновое изображение.</string>
+  <string name="addition">Дополнение</string>
+  <string name="subtraction">Вычитание</string>
+  <string name="multiplication">Умножение</string>
+  <string name="division">Отдел</string>
+  <string name="wrong">Неправильный ответ!</string>
+  <string name="right">Правильный ответ!</string>
+  <string name="difficulty">Трудности</string>
+  <string name="level_1">Уровень 1</string>
+  <string name="level_2">Уровень 2</string>
+  <string name="level_3">Уровень 3</string>
+  <string name="reset_score">Сбросить Оценка</string>
+</resources>

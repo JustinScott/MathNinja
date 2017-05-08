@@ -1,0 +1,19 @@
+<resources>
+  <string name="app_name">Math Ninja</string>
+  <string name="hello_world">¡Hola mundo!</string>
+  <string name="menu_settings">Configuración</string>
+  <string name="title_activity_main">MainActivity</string>
+  <string name="title_activity_options">OptionsActivity</string>
+  <string name="img_desc">Imagen de fondo.</string>
+  <string name="addition">Además</string>
+  <string name="subtraction">Resta de</string>
+  <string name="multiplication">Multiplicación</string>
+  <string name="division">División de</string>
+  <string name="wrong">¡Respuesta equivocada!</string>
+  <string name="right">¡Respuesta correcta!</string>
+  <string name="difficulty">Dificultad para</string>
+  <string name="level_1">Nivel 1</string>
+  <string name="level_2">Nivel 2</string>
+  <string name="level_3">Nivel 3</string>
+  <string name="reset_score">Puntuación de RESET</string>
+</resources>
