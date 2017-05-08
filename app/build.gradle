@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "tt.co.justins.mathninja"
-        minSdkVersion 11
+        minSdkVersion 12
         targetSdkVersion 25
     }
 

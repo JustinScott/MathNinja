@@ -97,6 +97,11 @@ public class OptionsActivity extends Activity {
     	operation = button.getText().toString();
         outroAnimation(view);
 
+        button1.setClickable(false);
+        button2.setClickable(false);
+        button3.setClickable(false);
+        button4.setClickable(false);
+
         mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.katana_gesture1);
         mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
             @Override
@@ -138,6 +143,27 @@ public class OptionsActivity extends Activity {
         animationSet2.setDuration(3000);
         animationSet2.addAnimation(aAnimation);
         animationSet2.addAnimation(rlAnimation);
+        animationSet2.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                button1.setClickable(false);
+                button2.setClickable(false);
+                button3.setClickable(false);
+                button4.setClickable(false);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                button1.setClickable(true);
+                button2.setClickable(true);
+                button3.setClickable(true);
+                button4.setClickable(true);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
 
         button1.setAnimation(animationSet1);
         button1.setVisibility(View.VISIBLE);
@@ -176,6 +202,10 @@ public class OptionsActivity extends Activity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                button1.setClickable(true);
+                button2.setClickable(true);
+                button3.setClickable(true);
+                button4.setClickable(true);
                 startMainActivity();
             }
 

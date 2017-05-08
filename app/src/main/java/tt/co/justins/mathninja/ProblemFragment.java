@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.Locale;
+import java.util.StringTokenizer;
 
 import static tt.co.justins.mathninja.ButtonsFragment.CORRECT;
 
@@ -172,9 +174,9 @@ public class ProblemFragment extends Fragment {
             return;
         }
 
-        textview3.setText("" + operand1);
-        textview4.setText("" + operand2);
-        textview5.setText("" + opChar);
+        textview3.setText(String.format(Locale.getDefault(), "%d", operand1));
+        textview4.setText(String.format(Locale.getDefault(), "%d", operand2));
+        textview5.setText(String.format(Locale.getDefault(), "%c", opChar));
     }
 
     public void updateCounter(int answer) {
@@ -187,12 +189,14 @@ public class ProblemFragment extends Fragment {
 
     public void updateScoreText() {
         TextView text1 = (TextView) getActivity().findViewById(R.id.textView1);
-        text1.setText("Score: " + (correct_count - incorrect_count));
+        text1.setText(String.format(Locale.getDefault(), "%s: %d",
+                getResources().getString(R.string.score), (correct_count - incorrect_count)));
     }
 
     public void updateLevelText(int level) {
         TextView text2 = (TextView) getActivity().findViewById(R.id.textView2);
-        text2.setText("Level:" + level);
+        text2.setText(String.format(Locale.getDefault(), "%s: %d",
+                getResources().getString(R.string.level), level));
     }
 
     public void resetScore() {

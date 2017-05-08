@@ -1,7 +1,6 @@
 <resources>
   <string name="app_name">Math Ninja</string>
-  <string name="hello_world">Salut tout le monde !</string>
-  <string name="menu_settings">Paramètres</string>
+    <string name="menu_settings">Paramètres</string>
   <string name="title_activity_main">MainActivity</string>
   <string name="title_activity_options">OptionsActivity</string>
   <string name="img_desc">Image de fond.</string>
@@ -16,4 +15,6 @@
   <string name="level_2">Niveau 2</string>
   <string name="level_3">Niveau 3</string>
   <string name="reset_score">Réinitialiser la partition</string>
+    <string name="level">Niveau</string>
+  <string name="score">Partition</string>
 </resources>

@@ -146,7 +146,7 @@ public class MainActivity extends Activity {
     	SharedPreferences sPref = getPreferences(MODE_PRIVATE);
     	SharedPreferences.Editor editor = sPref.edit();
     	editor.putInt("level", lvl);
-    	editor.commit();
+    	editor.apply();
     }
     
     @TargetApi(12)

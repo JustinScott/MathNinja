@@ -52,23 +52,25 @@ public class ButtonsFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-            Button button = (Button) view;
+        Button button = (Button) view;
 
-            String button_text = button.getText().toString();
-            int button_value = Integer.parseInt(button_text);
+        String button_text = button.getText().toString();
+        int button_value = Integer.parseInt(button_text);
 
-            view.animate().rotationYBy(360f);
+        view.setClickable(false);
+        view.animate().rotationYBy(360f);
+        view.setClickable(true);
 
-            int answer;
-            if(solution == button_value)
-                answer = CORRECT;
-            else
-                answer = INCORRECT;
+        int answer;
+        if(solution == button_value)
+            answer = CORRECT;
+        else
+            answer = INCORRECT;
 
-            playAnswerSound(answer);
-            comm.updateCounter(answer);
-            showAnswerToast(answer);
-            comm.newProblem();
+        playAnswerSound(answer);
+        comm.updateCounter(answer);
+        showAnswerToast(answer);
+        comm.newProblem();
     }
 
     public void updateButtons(int soln) {

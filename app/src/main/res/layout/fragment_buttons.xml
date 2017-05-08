@@ -23,8 +23,10 @@
             android:layout_width="180dp"
             android:layout_height="75dp"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:onClick="clickButton"
             android:drawableLeft="@drawable/ninjastar1"
+            android:drawableStart="@drawable/ninjastar1"
             android:textSize="20sp"
             android:textStyle = "bold" />
         <Button
@@ -32,9 +34,11 @@
             android:layout_width="180dp"
             android:layout_height="75dp"
             android:layout_toRightOf="@+id/button1"
+            android:layout_toEndOf="@+id/button1"
             android:layout_alignTop="@+id/button1"
             android:onClick="clickButton"
             android:drawableRight="@drawable/ninjastar1"
+            android:drawableEnd="@drawable/ninjastar1"
             android:textSize="20sp"
             android:textStyle = "bold" />
 
@@ -44,9 +48,11 @@
             android:layout_height="75dp"
             android:layout_below="@+id/button1"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_marginTop="20dp"
             android:onClick="clickButton"
             android:drawableLeft="@drawable/ninjastar1"
+            android:drawableStart="@drawable/ninjastar1"
             android:textSize="20sp"
             android:textStyle = "bold" />
 
@@ -55,9 +61,11 @@
             android:layout_width="180dp"
             android:layout_height="75dp"
             android:layout_toRightOf="@+id/button3"
+            android:layout_toEndOf="@+id/button3"
             android:layout_alignTop="@+id/button3"
             android:onClick="clickButton"
             android:drawableRight="@drawable/ninjastar1"
+            android:drawableEnd="@drawable/ninjastar1"
             android:textSize="20sp"
             android:textStyle = "bold" />
     </RelativeLayout>
